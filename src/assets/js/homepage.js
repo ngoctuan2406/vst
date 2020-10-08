@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as homeActions from '../../store/actions/homeAction';
@@ -26,7 +26,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const Hompage = (props) => {
-    const {actions, dataHomeReport} = props;
+    const { actions, dataHomeReport } = props;
     const isMobile = window.innerWidth >= 992 ? false : true;
     const [isOpened, setIsOpen] = useState(false);
     var provider = new firebase.auth.GoogleAuthProvider();
@@ -37,13 +37,13 @@ const Hompage = (props) => {
 
     const authenticate = (branchName) => {
         console.log('branchName', branchName);
-        firebase.auth().signInWithPopup(provider).then(function(result) {
+        firebase.auth().signInWithPopup(provider).then(function (result) {
             // This gives you a Google Access Token. You can use it to access the Google API.
             var token = result.credential.accessToken;
             // The signed-in user info.
             var user = result.user;
             // ...
-        }).catch(function(error) {
+        }).catch(function (error) {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
@@ -63,8 +63,8 @@ const Hompage = (props) => {
             ? <nav className="navbar">
                 <div className="navbar-top">
                     <img className="logo-img"
-                         src={require("../images/logo.png")}
-                         alt="Vingroup" title="Vingroup"/>
+                        src={require("../images/logo.png")}
+                        alt="Vingroup" title="Vingroup" />
                     <a href="#!" className="btn-close d-lg-none" onClick={() => toggleNavBar()}>
                         <FontAwesomeIcon icon={faTimes} color="black" />
                     </a>
@@ -81,8 +81,8 @@ const Hompage = (props) => {
 
         <header className="d-lg-none">
             <img className="logo-img"
-                 src={require("../images/logo.png")}
-                 alt="Vingroup" title="Vingroup"/>
+                src={require("../images/logo.png")}
+                alt="Vingroup" title="Vingroup" />
             <a href="#!" className="navbar-toggler" onClick={() => toggleNavBar()}>
                 <FontAwesomeIcon icon={faAlignJustify} color="black" />
             </a>
@@ -90,8 +90,8 @@ const Hompage = (props) => {
 
         <main>
             <img className="banner"
-                 src={require("../images/banner.png")}
-                 alt="Home Banner"/>
+                src={require("../images/banner.png")}
+                alt="Home Banner" />
 
             <div className="login">
                 <p>Please click button below to sign in!</p>
@@ -102,6 +102,9 @@ const Hompage = (props) => {
                     Log In With Facebook
                 </button>
             </div>
+            <button className="add-button" >
+                Add to Home Screen
+                </button>
         </main>
 
         {isOpened ? <div className="overlay" title="close side menu" onClick={() => toggleNavBar()}></div> : null}
