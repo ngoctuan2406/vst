@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Router, browserHistory, Route, Link} from 'react-router';
 import './App.scss';
 import Hompage from "./assets/js/homepage";
+import Mypage from "./assets/js/mypage";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.scss';
 var firebase = require('firebase');
@@ -34,7 +35,7 @@ const Profile = (props) => (
 class App extends Component {
     render () {
         return (
-            <Hompage/>
+            <Mypage/>
         );
     }
 }

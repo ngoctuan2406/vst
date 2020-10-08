@@ -4,7 +4,7 @@ const initState = {
     loading: false,
     data: {}
 }
-const homeReducer = (state = initState, action) => {
+const myReducer = (state = initState, action) => {
     switch (action.type) {
         case homeActionTypes.LOGIN:
             console.log('123');
@@ -15,4 +15,4 @@ const homeReducer = (state = initState, action) => {
             return state
     }
 }
-export default homeReducer;
+export default myReducer;
