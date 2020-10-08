@@ -1,0 +1,61 @@
+@import './variables';
+@import './header';
+
+a {
+    color: unset !important;
+    text-decoration: none !important;
+}
+
+.navbar {
+    top: 0;
+    z-index: 3;
+    width: 250px;
+    height: 100%;
+    overflow: auto;
+    font-weight: bold;
+    display: block !important;
+    padding: unset !important;
+    position: fixed !important;
+    background-color: $white !important;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+
+    .btn-close {
+        height: fit-content;
+    }
+
+    .navbar-top {
+        display: flex;
+        padding: 12px 15px;
+        justify-content: space-between;
+
+        .logo-img {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    .navbar-bottom {
+        padding: 12px 15px;
+
+        a {
+            padding: 10px 0;
+        }
+
+        .nav-item {
+            display: block;
+            text-align: left;
+        }
+    }
+}
+
+.overlay {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0,0,0,0.5);
+}
